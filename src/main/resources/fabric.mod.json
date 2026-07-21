@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "zoomo",
+	"version": "${version}",
+	"name": "Zoomo",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/zoomo/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "org.zehizo.zoomo.Zoomo",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "org.zehizo.zoomo.client.ZoomoClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"zoomo.mixins.json",
+		{
+			"config": "zoomo.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
